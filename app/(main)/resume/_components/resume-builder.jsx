@@ -88,7 +88,7 @@ export default function ResumeBuilder({ initialContent }) {
     if (contactInfo.mobile) parts.push(`📱 ${contactInfo.mobile}`);
     if (contactInfo.linkedin)
       parts.push(`💼 [LinkedIn](${contactInfo.linkedin})`);
-    if (contactInfo.twitter) parts.push(`🐦 [Twitter](${contactInfo.twitter})`);
+    if (contactInfo.github) parts.push(`🐦 [Github](${contactInfo.github})`);
 
     return parts.length > 0
       ? `## <div align="center">${user.fullName}</div>
@@ -217,7 +217,7 @@ export default function ResumeBuilder({ initialContent }) {
                   <Input
                     {...register("contactInfo.mobile")}
                     type="tel"
-                    placeholder="+1 234 567 8900"
+                    placeholder="+880"
                   />
                   {errors.contactInfo?.mobile && (
                     <p className="text-sm text-red-500">
@@ -240,16 +240,16 @@ export default function ResumeBuilder({ initialContent }) {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">
-                    Twitter/X Profile
+                    Github
                   </label>
                   <Input
-                    {...register("contactInfo.twitter")}
+                    {...register("contactInfo.github")}
                     type="url"
-                    placeholder="https://twitter.com/your-handle"
+                    placeholder="https://github.com/your-handle"
                   />
-                  {errors.contactInfo?.twitter && (
+                  {errors.contactInfo?.github && (
                     <p className="text-sm text-red-500">
-                      {errors.contactInfo.twitter.message}
+                      {errors.contactInfo.github.message}
                     </p>
                   )}
                 </div>
